@@ -1,5 +1,6 @@
 from tkinter import *
 
+#agregue un comentario xd
 def agregar_proveedores(root,proveedores_menu,main_menu):
     def previous_page():
         destroy_elements()
