@@ -11,7 +11,5 @@ def main_tk():
     main_menu(root)
     root.mainloop()
     
-   
-
 if __name__ == "__main__":
     main_tk()
