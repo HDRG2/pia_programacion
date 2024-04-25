@@ -3,7 +3,6 @@ from Productos.agregar import agregar_producto
 from Productos.ver_productos import ver_producto
 from Productos.eliminar import eliminar_producto
 
-
 def productos_menu(root, main_menu):
     def destroy_elements():
         button_agregar.destroy()
@@ -18,15 +17,12 @@ def productos_menu(root, main_menu):
         destroy_elements()
         main_menu(root)
        
-    
     def agregar(root):
         destroy_elements()
         #1.- Pasamos la ventana root 
         #2.- Es la pagina a la que regresaremos si damos click en el boton de regresar
         #3.- Es ka pagina a la que la pagina a la que volveremos debe regresar
         agregar_producto(root,productos_menu, main_menu)
-        
-
       
     def eliminar(root):
         destroy_elements()

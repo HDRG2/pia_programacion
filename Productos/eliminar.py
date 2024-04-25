@@ -8,16 +8,14 @@ def eliminar_producto(root,productos_menu,main_menu):
     
    def destroy_elements():
        titulo.destroy()
-       button_regresar.destroy
+       button_regresar.destroy()
        nombre_buscar.destroy()
        nombre.destroy()
        button_Buscar.destroy()
     
    def Buscar():
         print=("Boton de busqueda precionado")
-        
-    
-     
+
    root.title("Eliminando Producto")
   
    titulo = Label(root,text="ELIMINAR ",bg="gray",font=("Arial",13))
