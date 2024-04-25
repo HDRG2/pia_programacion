@@ -9,7 +9,7 @@ def productos_menu(root, main_menu):
         button_agregar.destroy()
         # button_editar.destroy()
         button_eliminar.destroy()
-        button_ver_productos.destroy()
+        # button_ver_productos.destroy()
         button_regresar.destroy()
     
     def previous_page():
@@ -26,10 +26,7 @@ def productos_menu(root, main_menu):
         #3.- Es ka pagina a la que la pagina a la que volveremos debe regresar
         agregar_producto(root,productos_menu, main_menu)
         
-    
-    def editar(root):
-        destroy_elements()
-        ver_producto(root,productos_menu,main_menu)
+
       
     def eliminar(root):
         destroy_elements()
@@ -49,9 +46,9 @@ def productos_menu(root, main_menu):
     button_eliminar.grid(row=3, column=0)
     button_eliminar.place(x=100, y=150)
     
-    button_ver_productos = Button(root, text="Ver Productos", command=lambda: editar(root))
-    button_ver_productos.grid(row=3, column=0)
-    button_ver_productos.place(x=100, y=200)
+    # button_ver_productos = Button(root, text="Ver Productos", command=lambda: editar(root))
+    # button_ver_productos.grid(row=3, column=0)
+    # button_ver_productos.place(x=100, y=200)
    
     button_regresar = Button(root,text="<==",command=lambda: previous_page())
     button_regresar.grid(row=2,column=0,padx=0,pady=0)

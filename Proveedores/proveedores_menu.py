@@ -4,9 +4,9 @@ from Proveedores.agregar import agregar_proveedores
 def proveedores_menu(root,main_menu):
     def destroy_elements():
         button_agregar.destroy()
-        button_editar.destroy()
+        # button_editar.destroy()
         button_eliminar.destroy()
-        button_ver_proveedor.destroy()
+        # button_ver_proveedor.destroy()
         button_regresar.destroy()
     
     def previous_page():
@@ -27,17 +27,17 @@ def proveedores_menu(root,main_menu):
     button_agregar.grid(row=3, column=0)
     button_agregar.place(x=100, y=100)
     
-    button_editar = Button(root, text="Editar", command=lambda: editar(root))
-    button_editar.grid(row=3, column=0)
-    button_editar.place(x=100, y=150)
+    # button_editar = Button(root, text="Editar", command=lambda: editar(root))
+    # button_editar.grid(row=3, column=0)
+    # button_editar.place(x=100, y=150)
     
     button_eliminar = Button(root, text="Eliminar", command=lambda: editar(root))
     button_eliminar.grid(row=3, column=0)
     button_eliminar.place(x=100, y=200)
     
-    button_ver_proveedor = Button(root, text="Ver Proveedor", command=lambda: editar(root))
-    button_ver_proveedor.grid(row=3, column=0)
-    button_ver_proveedor.place(x=100, y=250)
+    # button_ver_proveedor = Button(root, text="Ver Proveedor", command=lambda: editar(root))
+    # button_ver_proveedor.grid(row=3, column=0)
+    # button_ver_proveedor.place(x=100, y=250)
    
     button_regresar = Button(root,text="<==",command=lambda: previous_page())
     button_regresar.grid(row=2,column=0,padx=0,pady=0)
