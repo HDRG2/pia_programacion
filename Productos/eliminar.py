@@ -14,10 +14,12 @@ def eliminar_producto(root,productos_menu,main_menu):
        button_Buscar.destroy()
     
    def Buscar():
-        print=("Boton de busqueda precionado")
-        
+       print("Boton de busqueda precionado")
     
-     
+   def Eliminar():
+       print("Eliminar")
+        
+        
    root.title("Eliminando Producto")
   
    titulo = Label(root,text="ELIMINAR ",bg="gray",font=("Arial",13))
@@ -34,6 +36,13 @@ def eliminar_producto(root,productos_menu,main_menu):
    
    button_Buscar = Button(root,text="Buscar",command=lambda: Buscar())
    button_Buscar.place(x=135,y=90)
+   
+   tabla = ttk.Treeview(root,columns=('idProducto','NomProducto','precio','existecia','idTipoPorducto'),show='headings')
+   tabla.heading('idProducto',text='idProducto')
+   tabla.heading('NomProducto',text='NomProducto')
+   tabla.heading('existencia',text='existencia')
+   tabla.heading('idTipoProducto',text='idTipoProducto')
+   
    
    
 
