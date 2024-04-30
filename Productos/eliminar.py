@@ -14,9 +14,13 @@ def eliminar_producto(root,productos_menu,main_menu):
         nombre.destroy()
         button_Buscar.destroy()
         table.destroy()
+        button_eliminar.destroy()
 
     def Boton_Buscar():
         print("Boton de busqueda precionado")
+    
+    def Boton_eliminar():
+        print("Boton eliminar precionado")
            
     root.title("Eliminando Producto")
     
@@ -42,14 +46,19 @@ def eliminar_producto(root,productos_menu,main_menu):
     table.column('Informacion',width=150)
 
     
-    datos = [('Id', '123'),
-            ('Nombre','cocacola'),
-            ('Descripcion','Descripcion')]
+    datos = [('Id', ''),
+            ('NomProducto',''),
+            ('precio',''),
+            ('existencia',''),
+            ('idTipoProducto','')]
     
     for dato in datos:
         table.insert('','end',values=dato)
     
     table.place(x=0, y=150)
+    
+    button_eliminar = Button(root,text="Eliminar",command=lambda: Boton_eliminar())
+    button_eliminar.place(x=240,y=390)
     
 
 

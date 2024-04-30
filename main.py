@@ -24,11 +24,15 @@ def main_menu(root):
         destroy_elements()
         proveedores_menu(root,main_menu)
     
+    def close_sesion():
+        print("cerrando...")
+    
     root.title("Menu")
 
     boton1 = Button(root, text="Productos", command=productos)
     boton2 = Button(root, text="Empleados", command=empleados)
     boton3 = Button(root, text="Proveedores", command=proveedores)
+    boton4 = Button(root, text="Proveedores", command=close_sesion)
        
     boton1.place(x=100, y=100)
         
