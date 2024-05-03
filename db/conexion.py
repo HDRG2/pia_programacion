@@ -4,7 +4,7 @@ def db_connection():
     try:
         config = {
             'host': 'localhost',
-            'database': 'Papeleria_Proyecto',
+            'database': 'proyecto_papeleria',
             'port':'5432',
             'user': 'postgres',
             'password': 'postgres',
@@ -59,7 +59,6 @@ def select_product(id:str):
         print("No se pudo establecer la conexión con la base de datos")
     return None
     
-
 
 
    
