@@ -49,6 +49,7 @@ def productos_menu(root, main_menu):
     button_ver_productos = Button(root, text="Ver Productos", command=lambda: editar(root))
     button_ver_productos.grid(row=3, column=0)
     button_ver_productos.place(x=100, y=200)
+
    
     button_regresar = Button(root,text="<==",command=lambda: previous_page())
     button_regresar.grid(row=2,column=0,padx=0,pady=0)

@@ -8,7 +8,6 @@ def login(root):
 
     def iniciar_sesion():
         destroy_elements()
-        print("iniciar")
         main_menu(root)
 
     # Creamos un marco para contener los elementos del formulario

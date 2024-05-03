@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import  ttk
-from db.Productos2 import create_product
+from db.ProductosDB.create_product import create_product
 
 def agregar_producto(root,productos_menu,main_menu):
     def previous_page():
@@ -33,7 +33,7 @@ def agregar_producto(root,productos_menu,main_menu):
         "tipo_producto": combo.get(),
       }
       print("new_products:",new_product)
-      bd_data = create_product (new_product)
+      bd_data = create_product(new_product)
       print(bd_data)
   
     
