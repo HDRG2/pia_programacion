@@ -1,8 +1,16 @@
 from tkinter import *
-from tkinter import ttk
+from tkinter import ttk , Entry
+from db.conexion import select_product
 
+product_to_delete = []
+product_name = ""
 def eliminar_producto(root,productos_menu,main_menu):
-        
+    
+    datos = [('Id', 'poppopop'),
+            ('NomProducto',''),
+            ('precio',''),
+            ('existencia',''),
+            ('idTipoProducto','')]
     def previous_page():
         destroy_elements()
         productos_menu(root,main_menu)
@@ -15,12 +23,25 @@ def eliminar_producto(root,productos_menu,main_menu):
         button_Buscar.destroy()
         table.destroy()
         button_eliminar.destroy()
-
-    def Boton_Buscar():
-        print("Boton de busqueda precionado")
-    
-    def Boton_eliminar():
-        print("Boton eliminar precionado")
+        
+    def boton_buscar():
+        bd_data = select_product(nombre.get())
+        print("MyBData:",bd_data)
+        datos[0] = ("Id", bd_data[0])
+        datos[1] =  ('NomProducto',bd_data[1])
+        datos[2] = ('precio',bd_data[2])
+        datos[3] = ('existencia',bd_data[3])
+        datos[4] = ('idTipoProducto',bd_data[4])
+        print(datos)
+           # Limpia la tabla
+        for item in table.get_children():
+            table.delete(item)
+                
+        # Inserta los nuevos datos en la tabla
+        for dato in datos:
+            table.insert('', 'end', values=dato)
+     
+        
            
     root.title("Eliminando Producto")
     
@@ -34,8 +55,9 @@ def eliminar_producto(root,productos_menu,main_menu):
     nombre_buscar.place(x=30,y=65)
     nombre = Entry(root)
     nombre.place(x=100,y=65)
-        
-    button_Buscar = Button(root,text="Buscar",command=lambda: Boton_Buscar())
+    
+    
+    button_Buscar = Button(root,text="Buscar",command= lambda: boton_buscar())
     button_Buscar.place(x=135,y=90)
     
     table = ttk.Treeview(root, columns=('Encabezado', 'Informacion'), show="headings")
@@ -44,13 +66,6 @@ def eliminar_producto(root,productos_menu,main_menu):
     
     table.column('Encabezado',width=150)
     table.column('Informacion',width=150)
-
-    
-    datos = [('Id', ''),
-            ('NomProducto',''),
-            ('precio',''),
-            ('existencia',''),
-            ('idTipoProducto','')]
     
     for dato in datos:
         table.insert('','end',values=dato)
@@ -59,7 +74,7 @@ def eliminar_producto(root,productos_menu,main_menu):
     
     button_eliminar = Button(root,text="Eliminar",command=lambda: Boton_eliminar())
     button_eliminar.place(x=240,y=390)
-    
+
 
 
    
