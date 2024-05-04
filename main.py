@@ -11,6 +11,7 @@ def main_menu(root):
         boton1.destroy()
         boton2.destroy()
         boton3.destroy()
+        boton5.destroy()
 
     def productos():
         print("Destruyendo BOTONES")
