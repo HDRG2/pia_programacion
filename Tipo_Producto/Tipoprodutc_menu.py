@@ -1,13 +1,15 @@
 from tkinter import *
 from Tipo_Producto.agregar_TipoProducto import agregar_TipoProducto
 from Tipo_Producto.eliminar_TipoProducto import eliminar_TipoProducto
+from Tipo_Producto.ver_TipoProducto import ver_TipoProducto
+
 
 def TipoProduct_menu(root,main_menu):
     def destroy_elements():
         button_agregar.destroy()
         # button_editar.destroy()
         button_eliminar.destroy()
-        # button_ver_proveedor.destroy()
+        button_ver_TipoProducto.destroy()
         button_regresar.destroy()
     
     def previous_page():
@@ -23,6 +25,10 @@ def TipoProduct_menu(root,main_menu):
         destroy_elements()
         eliminar_TipoProducto(root,TipoProduct_menu,main_menu)
     
+    def editar(root):
+        destroy_elements()
+        ver_TipoProducto(root,TipoProduct_menu,main_menu)
+        
     root.title("TIPO PRODUCTO")
      
     button_agregar = Button(root, text="Agregar", command=lambda: agregar(root))
@@ -37,9 +43,9 @@ def TipoProduct_menu(root,main_menu):
     button_eliminar.grid(row=3, column=0)
     button_eliminar.place(x=100, y=150)
     
-    # button_ver_proveedor = Button(root, text="Ver Proveedor", command=lambda: editar(root))
-    # button_ver_proveedor.grid(row=3, column=0)
-    # button_ver_proveedor.place(x=100, y=250)
+    button_ver_TipoProducto = Button(root, text="Ver TipoProducto", command=lambda: editar(root))
+    button_ver_TipoProducto.grid(row=3, column=0)
+    button_ver_TipoProducto.place(x=100, y=200)
    
     button_regresar = Button(root,text="<==",command=lambda: previous_page())
     button_regresar.grid(row=2,column=0,padx=0,pady=0)

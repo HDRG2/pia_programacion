@@ -1,12 +1,12 @@
 from db.conexion import db_connection
 
-def select_producto(id:str):
+def select_tipoProducto(id:str):
     conn = db_connection()
     print("id" + id)
     if conn:
         try:
             cursor = conn.cursor()
-            query = "SELECT * FROM PRODUCTO WHERE idProducto = %s"
+            query = "SELECT * FROM TIPOPRODUCTO WHERE idTipoProducto = %s"
             cursor.execute(query,(id,))
             conn.commit()  # Confirmar la transacción
             rows = cursor.fetchone()            
@@ -19,5 +19,3 @@ def select_producto(id:str):
     else:
         print("No se pudo establecer la conexión con la base de datos")
     return None
-
-

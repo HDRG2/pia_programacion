@@ -5,10 +5,10 @@ def create_product(new_product):
     if conn:
         try:
             cursor = conn.cursor()
-            query = """INSERT INTO PRODUCTOS (idProducto, nomProducto, precio, existencia, idTipoProducto)
+            query = """INSERT INTO PRODUCTO (idProducto, nomProducto, precio, existencia, idTipoProducto)
             VALUES (%s, %s, %s, %s, %s)"""
             # Aquí proporciona los valores que deseas insertar
-            values = (int(new_product['id']), new_product['name'],float(new_product['precio']),int(new_product['existencia']),int(new_product['idTipoProducto']))
+            values = (int(new_product['id']), new_product['name'],float(new_product['precio']),int(new_product['existencia']), int(new_product['TipoProducto']))
             cursor.execute(query, values)
             conn.commit()  # Confirmar la transacción
             cursor.close()
