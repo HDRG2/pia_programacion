@@ -6,7 +6,6 @@ from Tipo_Producto.Tipoprodutc_menu import TipoProduct_menu
 
 def main_menu(root):
     # Obtenemos el objeto Tk llamando a la función tk_main
-   
     def destroy_elements():
         boton1.destroy()
         boton2.destroy()
@@ -14,7 +13,6 @@ def main_menu(root):
         boton5.destroy()
 
     def productos():
-        print("Destruyendo BOTONES")
         destroy_elements()
         productos_menu(root, main_menu)
     
@@ -43,17 +41,9 @@ def main_menu(root):
     boton5 = Button(root, text="TipoProducto",command=TipoProducto)
        
     boton1.place(x=100, y=100)
-    
     boton5.place(x=100,y=150)
-        
     boton2.place(x=100, y=200)
-        
     boton3.place(x=100, y=250)
-    
-    
-
-    #tk_main.mainloop()
-
 
    
 
