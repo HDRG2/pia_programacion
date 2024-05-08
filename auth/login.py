@@ -16,7 +16,7 @@ def login(root):
 
 
     # Creamos un marco para contener los elementos del formulario
-    frame = Frame(root, pady=100)
+    frame = Frame(root, pady=120,padx=120)
     frame.place(relx=0.5, rely=0.5, anchor=CENTER)  # Centramos el marco en la ventana
 
     nombre_label = Label(frame, text="Usuario")

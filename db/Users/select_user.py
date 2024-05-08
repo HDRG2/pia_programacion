@@ -1,13 +1,13 @@
 
 from db.conexion import db_connection
 
-def select_user(id:str):
+def select_persona(id:str):
     conn = db_connection()
     print("id" + id)
     if conn:
         try:
             cursor = conn.cursor()
-            query = "SELECT * FROM EMPLEADO WHERE idempleado = %s"
+            query = "SELECT * FROM PERSONA WHERE idempleado = %s"
             cursor.execute(query,(id,))
             conn.commit()  # Confirmar la transacción
             rows = cursor.fetchone()            

@@ -1,6 +1,6 @@
 from tkinter import *
 from Productos.products_menu import productos_menu
-from Empleados.empleados_menu import empleados_menu
+from Personas.empleados_menu import empleados_menu
 from Proveedores.proveedores_menu import proveedores_menu
 from Tipo_Producto.Tipoprodutc_menu import TipoProduct_menu
 
@@ -16,7 +16,7 @@ def main_menu(root):
         destroy_elements()
         productos_menu(root, main_menu)
     
-    def empleados():
+    def Empleados():
         destroy_elements()
         empleados_menu(root,main_menu) 
     
@@ -35,7 +35,7 @@ def main_menu(root):
     root.title("Menu")
 
     boton1 = Button(root, text="Productos", command=productos)
-    boton2 = Button(root, text="Empleados", command=empleados)
+    boton2 = Button(root, text="Empleados", command=Empleados)
     boton3 = Button(root, text="Proveedores", command=proveedores)
     boton4 = Button(root, text="Proveedores", command=close_sesion)
     boton5 = Button(root, text="TipoProducto",command=TipoProducto)

@@ -5,7 +5,7 @@ import string
 #actualmente esta funcion es la que funciona, ya que todos los id son NUMBER de 4 digitos
 def generate_id():
     #esto genera un numero random de 5 digitos
-    new_id = random.randint(10000,99999)
+    new_id = random.randint(1000,9999)
     return new_id
 
 #la mejor opcion seria que el id sea una cadena de texto

@@ -4,7 +4,7 @@ def db_connection():
     try:
         config = {
             'host': 'localhost',
-            'database': 'proyecto_papeleria',
+            'database': 'Papeleria_Proyecto',
             'port':'5432',
             'user': 'postgres',
             'password': 'postgres',
@@ -17,6 +17,7 @@ def db_connection():
         return None
     
     
+
 
 
    
