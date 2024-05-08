@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from db.TipoProductoDB.create_TipoProducto import create_TipoProducto
+from utilities.generate_id import generate_id
 
 def agregar_TipoProducto(root,TipoProduct_menu,main_menu):
     def previous_page():
@@ -10,8 +11,8 @@ def agregar_TipoProducto(root,TipoProduct_menu,main_menu):
     
     def destroy_elements():
         titulo.destroy()
-        nombre.destroy()
-        nombre_id.destroy()
+        # nombre.destroy()
+        # nombre_id.destroy()
         nombre_label2.destroy()
         descripsion.destroy()
         button_regresar.destroy()
@@ -24,7 +25,7 @@ def agregar_TipoProducto(root,TipoProduct_menu,main_menu):
     
     def boton_agregar():
       new_tipoproducto = {
-        "ID": nombre.get(),
+        "ID": generate_id(),
         "descripcion": descripsion.get(),
       }
       print("new_tipoproducto:",new_tipoproducto)
@@ -37,15 +38,15 @@ def agregar_TipoProducto(root,TipoProduct_menu,main_menu):
     titulo.grid(row=0,column=0,sticky="N",padx=(30,0),pady=(20,0))
     
    
-    nombre_id = Label(root,text="idTipoProducto:",bg="gray")
-    nombre_id.grid(row=1,column=0,pady=(10,0))
-    nombre = Entry(root)
-    nombre.grid(row=1,column=1,pady=(10,0))
+    # nombre_id = Label(root,text="idTipoProducto:",bg="gray")
+    # nombre_id.grid(row=1,column=0,pady=(10,0))
+    # nombre = Entry(root)
+    # nombre.grid(row=1,column=1,pady=(10,0))
     
     nombre_label2 = Label(root,text="descripcion:",bg="gray")
     nombre_label2.grid(row=2,column=0,pady=(10,0))
     descripsion = Entry(root)
-    descripsion.place(x=122,y=84)
+    descripsion.grid(row=2,column=1,pady=(10,0))
     
     
     
@@ -54,7 +55,7 @@ def agregar_TipoProducto(root,TipoProduct_menu,main_menu):
     button_regresar.place(x=0,y=0)
     
     button_agregar = Button(root,text="Crear",command=lambda:boton_agregar())
-    button_agregar.place(x=150,y=130)
+    button_agregar.place(x=160,y=90)
     
     # combo = ttk.Combobox(
     #   state="readonly",

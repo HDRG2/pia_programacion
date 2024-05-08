@@ -5,6 +5,7 @@ from Tipo_Producto.ver_TipoProducto import ver_TipoProducto
 
 
 def TipoProduct_menu(root,main_menu):
+    root.geometry("300x500")
     def destroy_elements():
         button_agregar.destroy()
         # button_editar.destroy()
@@ -25,7 +26,7 @@ def TipoProduct_menu(root,main_menu):
         destroy_elements()
         eliminar_TipoProducto(root,TipoProduct_menu,main_menu)
     
-    def editar(root):
+    def ver(root):
         destroy_elements()
         ver_TipoProducto(root,TipoProduct_menu,main_menu)
         
@@ -43,7 +44,7 @@ def TipoProduct_menu(root,main_menu):
     button_eliminar.grid(row=3, column=0)
     button_eliminar.place(x=100, y=150)
     
-    button_ver_TipoProducto = Button(root, text="Ver TipoProducto", command=lambda: editar(root))
+    button_ver_TipoProducto = Button(root, text="Ver TipoProducto", command=lambda: ver(root))
     button_ver_TipoProducto.grid(row=3, column=0)
     button_ver_TipoProducto.place(x=100, y=200)
    

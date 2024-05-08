@@ -5,6 +5,7 @@ from Personas.ver_Empleado import ver_empleado
 
 
 def empleados_menu(root, main_menu):
+    root.geometry("300x500")
     def destroy_elements():
         button_agregar.destroy()
         button_eliminar.destroy()

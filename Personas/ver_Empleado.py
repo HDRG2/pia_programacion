@@ -10,6 +10,8 @@ def ver_empleado(root,empleados_menu,main_menu):
    
     def destroy_elements():
         titulo.destroy()
+        table.destroy()
+        
     
     root.title("Mostrando Empleado")
     

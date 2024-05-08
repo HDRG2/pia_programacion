@@ -1,7 +1,9 @@
 from tkinter import * 
 from tkinter import ttk
 
+
 def ver_TipoProducto(root,Tipoproduct_menu,main_menu):
+    root.geometry("300x400")
     def previous_page():
         destroy_elements()
         Tipoproduct_menu(root,main_menu)
@@ -11,8 +13,9 @@ def ver_TipoProducto(root,Tipoproduct_menu,main_menu):
         # nombre.destroy()
         button_regresar.destroy()
         # nombre_label.destroy()
+        table.destroy()
     
-    
+
     root.title("Tipo de producto en Pantalla")
   
     titulo = Label(root,text="VER TIPO PRODUCTO",bg="gray",font=("Arial",13))
@@ -28,3 +31,12 @@ def ver_TipoProducto(root,Tipoproduct_menu,main_menu):
     button_regresar = Button(root,text="<==",command=lambda: previous_page())
     button_regresar.grid(row=2,column=0,padx=0,pady=0)
     button_regresar.place(x=0,y=0)
+    
+    table = ttk.Treeview(root,columns=('idTipoProducto','descripsion'),show="headings")
+    table.heading('idTipoProducto', text="idTipoProducto")
+    table.heading('descripsion',text="descr")
+    
+    table.column('idTipoProducto',width=100)
+    table.column('descripsion',width=100)
+    
+    table.place(x=50,y=90)

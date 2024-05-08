@@ -1,4 +1,5 @@
 from db.conexion import db_connection
+from utilities.generate_id import generate_id
 
 def create_TipoProducto(new_tipoproducto):
     conn = db_connection()
@@ -8,7 +9,7 @@ def create_TipoProducto(new_tipoproducto):
             query = """INSERT INTO TIPOPRODUCTO (idTipoProducto,descr)
             VALUES (%s, %s)"""
             # Aquí proporciona los valores que deseas insertar
-            values = (int(new_tipoproducto['ID']), new_tipoproducto['descripcion'])
+            values = (generate_id(), new_tipoproducto['descripcion'])
             cursor.execute(query, values)
             conn.commit()  # Confirmar la transacción
             cursor.close()
