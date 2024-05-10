@@ -1,7 +1,8 @@
 from tkinter import *
 from Tipo_Producto.agregar_TipoProducto import agregar_TipoProducto
 from Tipo_Producto.eliminar_TipoProducto import eliminar_TipoProducto
-from Tipo_Producto.ver_TipoProducto import ver_TipoProducto
+from Tipo_Producto.ver_TipoProducto import ver_tipo_producto
+
 
 
 def TipoProduct_menu(root,main_menu):
@@ -26,9 +27,10 @@ def TipoProduct_menu(root,main_menu):
         destroy_elements()
         eliminar_TipoProducto(root,TipoProduct_menu,main_menu)
     
-    def ver(root):
+    def mostrar_tipoproducto(root):
         destroy_elements()
-        ver_TipoProducto(root,TipoProduct_menu,main_menu)
+        ver_tipo_producto(root,TipoProduct_menu,main_menu)
+        
         
     root.title("TIPO PRODUCTO")
      
@@ -44,9 +46,11 @@ def TipoProduct_menu(root,main_menu):
     button_eliminar.grid(row=3, column=0)
     button_eliminar.place(x=100, y=150)
     
-    button_ver_TipoProducto = Button(root, text="Ver TipoProducto", command=lambda: ver(root))
+    button_ver_TipoProducto = Button(root, text="VerTipoProducto", command=lambda: mostrar_tipoproducto(root))
     button_ver_TipoProducto.grid(row=3, column=0)
     button_ver_TipoProducto.place(x=100, y=200)
+    
+    
    
     button_regresar = Button(root,text="<==",command=lambda: previous_page())
     button_regresar.grid(row=2,column=0,padx=0,pady=0)

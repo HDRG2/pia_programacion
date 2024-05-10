@@ -1,15 +1,15 @@
 from db.conexion import db_connection
 
-def mostrar_TipoProducto(id:str):
+def mostrar_tipo_producto():
     conn = db_connection()
-    print("id" + id)
+    # print("id" + id)
     if conn:
         try:
             cursor = conn.cursor()
-            query = "SELECT idTipoProducto, descripsion FROM TIPOPRODUCTO"
-            cursor.execute(query,(id,))
+            query = "SELECT * FROM TIPOPRODUCTO"
+            cursor.execute(query)
             conn.commit()  # Confirmar la transacción
-            rows = cursor.fetchone()            
+            rows = cursor.fetchall()            
             cursor.close()
             conn.close()
             print(rows)

@@ -55,7 +55,7 @@ def agregar_TipoProducto(root,TipoProduct_menu,main_menu):
     button_regresar.place(x=0,y=0)
     
     button_agregar = Button(root,text="Crear",command=lambda:boton_agregar())
-    button_agregar.place(x=160,y=90)
+    button_agregar.place(x=160,y=40)
     
     # combo = ttk.Combobox(
     #   state="readonly",
