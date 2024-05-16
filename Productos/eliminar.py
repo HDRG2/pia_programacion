@@ -89,7 +89,6 @@ def eliminar_producto(root,productos_menu,main_menu):
         table.insert('','end',values=dato)
     
     table.place(x=0, y=150)
-    
     button_eliminar = Button(root,text="Eliminar",command=lambda: borrar_datos())
     button_eliminar.place(x=240,y=390)
 

@@ -1,8 +1,12 @@
 from tkinter import *
 from tkinter import ttk
+from db.PersonasDB.mostrar_persona import mostrar_persona
 
 def ver_empleado(root,empleados_menu,main_menu):
-    root.geometry("770x400")
+    get_persona_data()
+    personas = mostrar_persona()
+    root.geometry("1160x450")
+    
     def previous_page():
         print("si toque el boton")  
         destroy_elements()
@@ -11,13 +15,14 @@ def ver_empleado(root,empleados_menu,main_menu):
     def destroy_elements():
         titulo.destroy()
         table.destroy()
+        button_regresar.destroy()
         
     
     root.title("Mostrando Empleado")
     
     titulo = Label(root,text="VER EMPLEADOS",bg="gray",font=("Arial",15))
     titulo.grid(row=0,column=0,sticky="N",padx=(30,0),pady=(20,0))
-    titulo.place(x=300,y=40)
+    titulo.place(x=500,y=40)
     
     button_regresar = Button(root,text="<==",command=lambda: previous_page())
     button_regresar.grid(row=2,column=0,padx=0,pady=0)
@@ -34,17 +39,25 @@ def ver_empleado(root,empleados_menu,main_menu):
     table.heading('Telefono', text="Telefono")
     table.heading('Correo', text="Correo")
 
-    table.column('IdEmpleado', width=80)
-    table.column('Nombre', width=80)
-    table.column('ApPat', width=80)
-    table.column('ApMat', width=80)
-    table.column('FecNac', width=80)
-    table.column('Curp', width=80)
-    table.column('Rfc', width=80)
-    table.column('Telefono', width=80)
-    table.column('Correo', width=80)
+    table.column('IdEmpleado', width=120)
+    table.column('Nombre', width=120)
+    table.column('ApPat', width=120)
+    table.column('ApMat', width=120)
+    table.column('FecNac', width=120)
+    table.column('Curp', width=150)
+    table.column('Rfc', width=120)
+    table.column('Telefono', width=120)
+    table.column('Correo', width=120)
+    
+    if personas:
+        for persona in personas:
+            table.insert('','end', values=persona)
     
     table.place(x=20, y=120)
+    
+def get_persona_data():
+    persona = mostrar_persona()
+    print("persona",persona)
 
     
     

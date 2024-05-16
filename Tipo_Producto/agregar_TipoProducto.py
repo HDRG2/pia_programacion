@@ -14,7 +14,7 @@ def agregar_TipoProducto(root,TipoProduct_menu,main_menu):
         # nombre.destroy()
         # nombre_id.destroy()
         nombre_label2.destroy()
-        descripsion.destroy()
+        descripcion_entry.destroy()
         button_regresar.destroy()
         # combo.destroy()
         button_agregar.destroy()
@@ -22,11 +22,16 @@ def agregar_TipoProducto(root,TipoProduct_menu,main_menu):
     # def mostrar_seleccion(event):
     #   seleccion = combo.get()
     #   print("Seleccione:",seleccion)
-    
+   
     def boton_agregar():
+      descripcion_texto = descripcion_entry.get()
+      if not descripcion_texto.strip():
+        print("Error: La descripcion no puede estar vacia.")
+        return
+  
       new_tipoproducto = {
         "ID": generate_id(),
-        "descripcion": descripsion.get(),
+        "descripcion": descripcion_texto,
       }
       print("new_tipoproducto:",new_tipoproducto)
       bd_data = create_TipoProducto(new_tipoproducto)
@@ -37,29 +42,16 @@ def agregar_TipoProducto(root,TipoProduct_menu,main_menu):
     titulo = Label(root,text="TIPOPRODUCTO",bg="gray")
     titulo.grid(row=0,column=0,sticky="N",padx=(30,0),pady=(20,0))
     
-   
-    # nombre_id = Label(root,text="idTipoProducto:",bg="gray")
-    # nombre_id.grid(row=1,column=0,pady=(10,0))
-    # nombre = Entry(root)
-    # nombre.grid(row=1,column=1,pady=(10,0))
-    
     nombre_label2 = Label(root,text="descripcion:",bg="gray")
     nombre_label2.grid(row=2,column=0,pady=(10,0))
-    descripsion = Entry(root)
-    descripsion.grid(row=2,column=1,pady=(10,0))
-    
-    
-    
+    descripcion_entry = Entry(root)
+    descripcion_entry.grid(row=2,column=1,pady=(10,0))
+     
     button_regresar = Button(root,text="<==",command=lambda: previous_page())
     button_regresar.grid(row=2,column=0,padx=0,pady=0)
     button_regresar.place(x=0,y=0)
     
     button_agregar = Button(root,text="Crear",command=lambda:boton_agregar())
-    button_agregar.place(x=160,y=40)
+    button_agregar.place(x=160,y=100)
     
-    # combo = ttk.Combobox(
-    #   state="readonly",
-    #   values=["Materia de Escritura","Papel","Material de oficina","Material escolar","Materiales de Arte","Electronica"]
-    # )
-    # combo.place(x=120,y=84)
-    # combo.bind('<<ComboboxSelected>>',mostrar_seleccion)
+  

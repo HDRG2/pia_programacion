@@ -38,6 +38,6 @@ def ver_tipo_producto(root, Tipoproduct_menu, main_menu):
     table.place(x=50, y=90)
     
 def get_tipo_producto_data():
-    perro = mostrar_tipo_producto()
-    print("miperro:",perro[0])
+    tipo_producto = mostrar_tipo_producto()
+    print("miperro:",tipo_producto[0])
         

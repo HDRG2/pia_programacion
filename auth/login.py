@@ -5,15 +5,21 @@ def login(root):
     root.title("Bienvenido!")
 
     def destroy_elements():
+        nombre_label.destroy()
+        nombre.destroy()
         frame.destroy()
+        button.destroy()
+        password.destroy()
+        password_label.destroy()
+        create_account_label.destroy()
 
     def iniciar_sesion():
         destroy_elements()
         main_menu(root)
     
     def create_account_form():
+        destroy_elements()
         create_account(root,login)
-
 
     # Creamos un marco para contener los elementos del formulario
     frame = Frame(root, pady=120,padx=120)

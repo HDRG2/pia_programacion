@@ -4,6 +4,7 @@ from Productos.ver_productos import ver_producto
 from Productos.eliminar import eliminar_producto
 
 def productos_menu(root, main_menu):
+    root.geometry("300x500")
     def destroy_elements():
         button_agregar.destroy()
         # button_editar.destroy()
@@ -18,17 +19,17 @@ def productos_menu(root, main_menu):
         main_menu(root)
        
     def agregar(root):
-        destroy_elements()
+        destroy_elements() 
         #1.- Pasamos la ventana root 
         #2.- Es la pagina a la que regresaremos si damos click en el boton de regresar
-        #3.- Es ka pagina a la que la pagina a la que volveremos debe regresar
+        #3.- Es la pagina a la que la pagina a la que volveremos debe regresar
         agregar_producto(root,productos_menu, main_menu)
       
     def eliminar(root):
         destroy_elements()
         eliminar_producto(root,productos_menu,main_menu)
     
-    def editar(root):
+    def mostrar_producto(root):
         destroy_elements()
         ver_producto(root,productos_menu,main_menu)
    
@@ -46,7 +47,7 @@ def productos_menu(root, main_menu):
     button_eliminar.grid(row=3, column=0)
     button_eliminar.place(x=100, y=150)
     
-    button_ver_productos = Button(root, text="Ver Productos", command=lambda: editar(root))
+    button_ver_productos = Button(root, text="Ver Productos", command=lambda: mostrar_producto(root))
     button_ver_productos.grid(row=3, column=0)
     button_ver_productos.place(x=100, y=200)
 
